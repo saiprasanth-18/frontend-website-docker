@@ -1,5 +1,12 @@
 function showMessage() {
-    alert("Thank you for visiting TechNova Solutions!");
+    alert("Welcome to TechNova Solutions!");
 }
 
-console.log("Website Loaded Successfully");
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
